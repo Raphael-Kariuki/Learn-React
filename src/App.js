@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './index.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class Premier extends React.Component{
+    render(){
+        return(
+            <div>
+                <Navigation />
+               <p id="colorize" > Hello World!! </p>
+               <p data-lorem = "starta" > lorem ipsum {1+1 === 2 ? 'True' : 'False'} </p>
+               <Login />
+            </div>
+        );
+    }
 }
 
-export default App;
+class Navigation extends React.Component{
+    render(){
+        return(
+            <nav id="navigation">
+                <li>
+                    <ul>Home</ul>
+                    <ul>Gallery</ul>
+                    <ul>Contacts</ul>
+                </li>
+            </nav>
+        );
+    }
+}
+class Login extends React.Component{
+    render(){
+        return(
+            <div id="login-box">
+                <input type="text" placeholder="Username"></input>
+                <input type="password" placeholder="Password"></input>
+                <button type="submit">Login</button>
+            </div>
+        )
+    }
+}
+
+export default Premier;
